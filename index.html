@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <pre id="jtext"></pre>
+
+  <script>
+    var obj =  {
+     "msg":"Hello",
+     "anumber":243,
+     "anobject":{
+      "whoa":"nuts",
+      "anarray":[1,2, "three"],
+      "more":"stuff"
+    },
+    "awesome":true,
+    "bogus":false,
+    "meaning":null,
+    "japanese":"明日がある。",
+    "link":"http://eyehunts.com",
+  }
+
+  var str = JSON.stringify(obj, null, 2);
+  document.getElementById("jtext").innerHTML = str;
+
+
+</script>
+
+</body>
+</html> 
