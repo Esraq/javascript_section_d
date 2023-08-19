@@ -1,23 +1,82 @@
-<!doctype html>
 <html>
-<head>
-<script>
-function add()
-{
-  var numOne, numTwo, sum;
-  numOne = parseInt(document.getElementById("first").value);
-  numTwo = parseInt(document.getElementById("second").value);
-  sum = numOne + numTwo;
-  document.getElementById("answer").value = sum;
-}
-</script>
-</head>
+  <head>
+     <title>Calculator</title>
+   </head>
 <body>
 
-<p>Enter the First Number: <input id="first"></p>
-<p>Enter the Second Number: <input id="second"></p>
+<script type="text/javascript">
+    /* Functions to get the value main purpose to reduce redundancy*/
+    function getValue(firstNumber, secondNumber){
+        x = document.getElementById("firstNumber").value;
+        y = document.getElementById("secondNumber").value;
+    }
+    /*Function to add two numbers*/
+    function add() {
+        /* Get the value to add numbers*/
+        getValue();
+        /*The Number() function converts the object argument to a number
+          that represents the object's value*/
+        sum=Number(x)+Number(y);
+        /*print the number after addition*/
+        document.getElementById("result").innerHTML =  x+" + "+y+" = "+sum;
+    }
+    /*Function to subtract two numbers*/
+    function sub() {
+        /* Get the value to subtract numbers*/
+        getValue();
+        /*The Number() function converts the object argument to a number
+          that represents the object's value*/
+        sub=Number(x)-Number(y);
+        /*print the number after subtraction*/
+        document.getElementById("result").innerHTML = x+" - "+y+" = "+sub;
+    }
+    /*Function to multiply two numbers*/
+    function mul() {
+        /* Get the value to multiply numbers*/
+        getValue();
+        /*The Number() function converts the object argument to a number
+          that represents the object's value*/
+        mul=Number(x)*Number(y);
+        /*print the number after multiplication*/
+        document.getElementById("result").innerHTML = x+" * "+y+" = "+mul;
+    }
+    /*Function to divide two numbers*/
+    function div() {
+        /* Get the value to divide numbers*/
+        getValue();
+        /*The Number() function converts the object argument to a number
+          that represents the object's value*/
+        div=Number(x)/Number(y);
+        /*print the number after division*/
+        document.getElementById("result").innerHTML = x+" / "+y+" = "+div;
+    }
+</script>
+<table>
+  <h1>Online Calculator</h1>
+  <tr>
+    <td>Enter a first number : </td>
+    <!--Get first input-->
+    <td><input type="text" id="firstNumber"  required /></td>
+  </tr>
+  <tr>
+    <!--Get second input-->
+    <td>Enter a second number : </td>
+    <td><input type="text" id="secondNumber" required /></td>
+  </tr>
+</table>
+<br/>
+<!--Function for Addition-->
 <button onclick="add()">Add</button>
-<p>Sum = <input id="answer"></p>
+<!--Function for Substraction-->
+<button onclick="sub()">Substract</button>
+<!--Function for Multiplication-->
+<button onclick="mul()">Multiply</button>
+<!--Function for Division-->
+<button onclick="div()">Divide</button><br/>
+<!--For showing result-->
+<p id="result">Result</p>
+
 
 </body>
+
 </html>
